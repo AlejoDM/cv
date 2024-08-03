@@ -18,23 +18,32 @@ header nav ul {
 
 header nav ul li {
     margin: 0 15px;
-    font-size: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
     transition: all 0.5s ease-in-out;
     background-color: rgb(0, 0, 0, 0);
     padding: 10px;
     border-radius: 5px;
 }
 
-header nav ul li a:hover {
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(0, 0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+header nav ul li:hover {
     background-color: rgb(251, 255, 0,0.2);
-    color: #fffb00; /* Cambiar color al pasar el mouse por encima */
+    color: #fffb00; 
     transform: scale(1.2);
+}
+
+header nav ul li a:hover {
+    transform: scale(1.2);
+    color: #fffb00; 
 }
 
 header h1 {
