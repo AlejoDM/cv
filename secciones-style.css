@@ -70,13 +70,20 @@ body {
     padding-left: 45px;
 }
 
+
+#contacto {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
 #contacto ul {
     list-style-type: none;
-    justify-content: center; 
+    display: flex;
 }
 
 #contacto li {
-    display: inline; /* Alinea los elementos de lista horizontalmente */
+    display: inline-block; 
+    margin: 0 15px;
 }
 
 #contacto i {
@@ -92,8 +99,4 @@ body {
 
 #contacto h2 {
     padding-bottom: 15px;
-}
-
-#contacto {
-    padding-bottom: 20px;
 }
