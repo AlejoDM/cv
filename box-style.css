@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("Lucas Sentado Ciudad PC.png") no-repeat;
+    background-size: cover;  
+    font-family:'Times New Roman', Times, serif;  
+}
+
+.box {
+    background: rgba(0,0,0,0.4);
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 4%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.FotoPerfil {
+    border-radius: 50%;
+}
+
+.box h1 {
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight: 100;
+    margin: 30px 0 20px;
+}
+
+.box h2 {
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+
+.box i {
+    color: white;
+    padding: 5px;
+    font-size: 40px;
+}
+
+.box li {
+    text-align: justify;
+    list-style-type: none;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 100%;
+}
+
+.box li i {
+    margin-right: 15px;
+    min-width: 50px;
+}
