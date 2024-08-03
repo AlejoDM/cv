@@ -45,8 +45,8 @@ header img {
 }
 
 main {
-    padding-top: 150px; /* Altura del header */
-    padding-bottom: 70px; /* Espacio para el pie de página */
+    padding-top: 120px; /* Altura del header */
+    padding-bottom: 150px; /* Espacio para el pie de página en dispositivos móviles */
 }
 
 section {
@@ -66,7 +66,7 @@ footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 1rem; /* Añadir padding al footer */
+    padding: 1rem; /* Ajusta el padding del footer */
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -105,6 +105,6 @@ p {
 
     main {
         padding-top: 120px; /* Ajusta el padding-top para que se ajuste mejor en pantallas más pequeñas */
-        padding-bottom: 80px; /* Ajusta el padding-bottom para que no se superponga con el footer en dispositivos móviles */
+        padding-bottom: 120px; /* Ajusta el padding-bottom para evitar que el footer tape el contenido */
     }
 }
