@@ -40,7 +40,8 @@ header nav ul li a:hover {
 header h1 {
     color: white;
     font-size: 36px;
-    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 footer {
