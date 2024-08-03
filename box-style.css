@@ -6,7 +6,9 @@
 
 body {
     background: url("Lucas Sentado Ciudad PC.png") no-repeat;
-    background-size: cover;  
+    background-size:cover;  
+    background-position: center;
+    background-attachment: fixed;
     font-family:'Times New Roman', Times, serif;  
 }
 
