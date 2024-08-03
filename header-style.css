@@ -3,6 +3,8 @@ header {
     color: white;
     text-align: center;
     padding-bottom: 15px;
+    margin: 0;
+    padding-top: 15px;
 }
 
 header nav ul {

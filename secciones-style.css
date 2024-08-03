@@ -1,0 +1,21 @@
+/* Estilos para las secciones */
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* Opcional: estilo para transiciones suaves */
+.section {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.section.hidden {
+    opacity: 0;
+}
+
+.section.active {
+    opacity: 1;
+}
