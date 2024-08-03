@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+}
+
+main {
+    flex: 1;
+}
+
 header {
     background: rgb(0, 0, 0, 0.4);
     color: white;
