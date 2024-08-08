@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: black;
-    background: url("../imagenes/Lucas\ Sentado\ Ciudad\ PC.png") no-repeat;
+    background: url("../imagenes/fondo.png") no-repeat;
     background-size:cover;  
     background-position: center;
     background-attachment: fixed;
