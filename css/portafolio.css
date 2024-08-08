@@ -6,6 +6,11 @@
     margin-bottom: 20px;
     display: inline-block;
     margin: 0 15px;
+    max-width: 350px;
+}
+
+#portafolio {
+    text-align: center;
 }
 
 #portafolio p {
@@ -28,6 +33,10 @@
     margin-right: 10%;
     transition: 0.5s;
 }
+.portfolio-item a {
+    text-decoration: none;
+}
+
 
 .portfolio-item img {
     width: 170px;
@@ -50,7 +59,6 @@
 }
 
 .portfolio-item p {
-    text-align: justify;
     font-size: 0.9em;
     color: white;
 }
