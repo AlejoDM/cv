@@ -1,0 +1,52 @@
+.portfolio-grid {
+    margin-top: 20px;
+    list-style-type: none;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); 
+}
+
+.portfolio-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 16px;
+    background:rgb(0, 0, 0, 0.4);
+    margin-left: 10%;
+    margin-right: 10%;
+    transition: 0.5s;
+}
+
+.portfolio-item img {
+    width: 170px;
+    height: 170px;
+    border-bottom: 1px solid #ddd;
+    filter: blur(3px);
+    transition: filter 0.5s;
+}
+
+.portfolio-item:hover img {
+    filter: blur(0);
+}
+
+.portfolio-item h3 {
+    margin: 8px 0;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.portfolio-item p {
+    text-align: justify;
+    font-size: 0.9em;
+    color: white;
+}
