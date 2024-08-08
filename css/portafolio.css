@@ -8,6 +8,10 @@
     margin: 0 15px;
 }
 
+#portafolio p {
+    text-align: center;
+}
+
 .portfolio-item:hover {
     transform: scale(1.05); 
 }
