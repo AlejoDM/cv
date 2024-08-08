@@ -9,6 +9,10 @@
     max-width: 350px;
 }
 
+.portfolio-grid a {
+    text-decoration: none;
+}
+
 #portafolio {
     text-align: center;
 }
@@ -33,10 +37,6 @@
     margin-right: 10%;
     transition: 0.5s;
 }
-.portfolio-item a {
-    text-decoration: none;
-}
-
 
 .portfolio-item img {
     width: 170px;
@@ -54,11 +54,13 @@
     margin: 8px 0;
     font-size: 1.5em;
     color: white;
-    text-decoration: none;
-    
 }
 
 .portfolio-item p {
     font-size: 0.9em;
     color: white;
+}
+
+.portfolio-grid {
+    text-align: justify;
 }
