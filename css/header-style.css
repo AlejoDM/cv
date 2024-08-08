@@ -28,13 +28,14 @@ header nav ul {
     padding: 0;
     margin-top: 20px;
     margin-bottom: 15px;
+    flex-wrap: wrap; /* Permite que los ítems se envuelvan en una nueva línea si es necesario */
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 0 10px; /* Reduce el margen para pantallas más pequeñas */
     transition: all 0.5s ease-in-out;
     background-color: rgb(0, 0, 0, 0);
-    padding: 10px;
+    padding: 8px; /* Reduce el padding */
     border-radius: 5px;
 }
 
@@ -42,15 +43,15 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px; /* Ajusta el tamaño de fuente */
     transition: all 0.5s ease-in-out;
     background-color: rgb(0, 0, 0, 0);
-    padding: 10px;
+    padding: 8px; /* Ajusta el padding */
     border-radius: 5px;
 }
 
 header nav ul li:hover {
-    background-color: rgb(251, 255, 0,0.2);
+    background-color: rgb(251, 255, 0, 0.2);
     color: #fffb00; 
     transform: scale(1.2);
 }
@@ -65,6 +66,31 @@ header h1 {
     font-size: 36px;
     padding-top: 15px;
     padding-bottom: 5px;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    header nav ul li {
+        margin: 0 8px; /* Reduce el margen */
+        padding: 6px; /* Reduce el padding */
+    }
+
+    header nav ul li a {
+        font-size: 18px; /* Ajusta el tamaño de fuente */
+        padding: 6px; /* Ajusta el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 0 5px; /* Reduce aún más el margen */
+        padding: 4px; /* Reduce aún más el padding */
+    }
+
+    header nav ul li a {
+        font-size: 16px; /* Ajusta el tamaño de fuente para pantallas muy pequeñas */
+        padding: 4px; /* Ajusta el padding */
+    }
 }
 
 footer {
