@@ -8,4 +8,4 @@ Este es el CV de Alejo José De Miguel, un estudiante de Ingeniería en Sistemas
 
 El currículum vitae está disponible en el archivo `index.html` en la raíz del repositorio. Puedes abrir este archivo en cualquier navegador web para ver el CV en formato HTML.
 
-También puedes [ver el CV en línea aquí](https://cv-6srd8aut7-alejos-projects-b5064146.vercel.app).
+También puedes [ver el CV en línea aquí](https://alejodm.github.io/cv/).
