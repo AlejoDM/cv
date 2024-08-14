@@ -16,3 +16,12 @@ function showSection(sectionId) {
         }
     });
 }
+
+// Función para ocultar la pantalla de carga cuando la imagen de fondo se ha cargado
+window.addEventListener('load', function() {
+    var loadingScreen = document.getElementById('loading-screen');
+
+    setTimeout(function() {
+        loadingScreen.style.animation = 'fadeOut 1s ease-out forwards'; // Aplica la animación de ocultamiento
+    })
+});
