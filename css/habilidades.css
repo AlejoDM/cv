@@ -1,15 +1,14 @@
-.conocimientos {
+#servicios ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: space-around;
 }
 
-.conocimientos li {
+#servicios ul li {
     font-size: 1.5rem; 
     line-height: 2rem; 
 }
-
-.conocimientos li i {
+#servicios ul li i {
     font-size: 3rem; 
     margin-right: 10px; 
 }
@@ -20,4 +19,8 @@
 
 #contacto li i {
     font-size: 5rem;
+}
+
+#acerca p {
+    font-size: 1.5rem;
 }
