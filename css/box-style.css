@@ -18,7 +18,7 @@ body {
 
 .inicio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     padding: 20px;
     justify-content: space-around;
 }
