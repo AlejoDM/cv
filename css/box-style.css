@@ -6,7 +6,7 @@
 
 body {
     display:flex;
-    flex-direction: column;
+    flex-direction:row;
     min-height: 100vh;
     background-color: black;
     background: url("../imagenes/fondo.png") no-repeat;
@@ -16,30 +16,45 @@ body {
     font-family:'Times New Roman', Times, serif;  
 }
 
+.inicio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(505px, 1fr));
+    padding: 20px;
+    justify-content: space-around;
+}
+
 .box {
     background: rgba(0,0,0,0.4);
-    width: 500px;
+    width: 85%;
     margin: 0 auto;
     margin-top: 4%;
-    padding: 20px;
+    padding: 10px;
     color: white;
     text-align: center;
     border-radius: 15px;
+    filter: grayscale();
+    transition: all 1s ease-in-out;
 }
 
 .FotoPerfil {
     border-radius: 50%;
 }
 
+.box:hover {
+    filter: none;
+    transform: scale(105%);
+}
+
 .box h1 {
-    font-size: 35px;
+    font-size: 45px;
     letter-spacing: 4px;
     font-weight: 100;
     margin: 30px 0 20px;
+    font-weight: bold;
 }
 
 .box h2 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 100;
     letter-spacing: 3px;
     margin-bottom: 20px;
@@ -57,7 +72,7 @@ body {
     text-align: left;
     list-style-type: none;
     padding-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 18px;
     font-weight: 100%;
 }

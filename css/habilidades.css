@@ -1,0 +1,19 @@
+.conocimientos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: space-around;
+}
+
+.conocimientos li {
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+}
+
+.conocimientos li i {
+    font-size: 3rem; 
+    margin-right: 10px; 
+}
+
+#servicios p {
+    font-size: 1.5rem;
+}

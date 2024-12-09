@@ -7,10 +7,11 @@
     <link rel="shortcut icon" href="imagenes/currículum.png" type="image/x-icon">
     <link rel ="stylesheet" href="css/box-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/header-style.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />    <link rel="stylesheet" href="css/header-style.css">
     <link rel="stylesheet" href="css/secciones-style.css">
     <link rel="stylesheet" href="css/portafolio.css">
     <link rel="stylesheet" href="css/pantalla-carga-style.css">
+    <link rel="stylesheet" href="css/habilidades.css">
     <script src="scripts.js"></script>
 </head>
 
@@ -29,24 +30,28 @@
                 <li><a href="#inicio" onclick="showSection('inicio')">Inicio</a></li>
                 <li><a href="#acerca" onclick="showSection('acerca')">Acerca de mí</a></li>
                 <li><a href="#servicios" onclick="showSection('servicios')">Habilidades</a></li>
-                <li><a href="#portafolio" onclick="showSection('portafolio')">Portafolio</a></li>
+                <li><a href="#portafolio" onclick="showSection('portafolio')">Proyectos</a></li>
                 <li><a href="#contacto" onclick="showSection('contacto')">Contacto</a></li>
             </ul>
         </nav>
-        <h1>Alejo José De Miguel</h1>
+        <h1>Portfolio</h1>
     </header>
 
 
     <main>
 
 
-        <section id="inicio" class="box">
-            <img src="imagenes/yo.jpeg" alt="" width="180" class="FotoPerfil" >
-            <h1>Alejo José De Miguel</h1>
-            <h2>Estudiante de Ingeniería en Sistemas de Información</h2>
-            <li><i class="fa-regular fa-calendar-days"></i>17/09/2002</li>
-            <li><i class="fa-solid fa-location-dot"></i>Villa María, Córdoba, Argentina.</li>
-            <li><i class="fa-solid fa-phone"></i>+54 9 353 4205342</li>
+        <section id="inicio" class="inicio">
+            <div class="box">
+                <h1>Alejo De Miguel</h1>
+                <h2>Estudiante de Ingeniería en Sistemas de Información</h2>
+                <li><i class="fa-solid fa-calendar-days"></i>17/09/2002</li>
+                <li><i class="fa-solid fa-location-dot"></i>Villa María, Córdoba, Argentina.</li>
+                <li><i class="fa-solid fa-phone"></i>+54 9 3534 205 342</li>
+            </div>
+            <div class="box">
+                <img src="imagenes/yo.jpeg" alt="" class="FotoPerfil" width="90%">
+            </div>
         </section>
 
 
@@ -63,26 +68,28 @@
         <section id="servicios" class="hidden">
             <h2>Habilidades</h2>
             <p>Mis conocimientos en diferentes lenguajes de programación.</p>
-            <ul>
-                <li><i class="fa-brands fa-python"></i>Python</li>
-                <li><i class="fa-brands fa-java"></i>Java</li>
+            <ul class="conocimientos">
+                <li><i class="devicon-python-plain colored"></i>Python</li>
+                <li><i class="devicon-java-plain colored"></i>Java</li>
+                <li><i class="devicon-typescript-plain colored"></i>TypeScript</li>
             </ul>
             <p>Mis conocimientos en diferentes frameworks.</p>
-            <ul>
-                <li><i class="fa-brands fa-node-js"></i>NestJS</li>
-                <li><i class="fa-brands fa-angular"></i>Angular</li>
+            <ul class="conocimientos">
+                <li><i class="devicon-nestjs-original colored"></i>NestJS</li>
+                <li><i class="devicon-angularjs-plain colored"></i>Angular</li>
+                <li><i class="devicon-django-plain colored"></i>Django</li>
             </ul>
             <p>Mis conocimientos en desarrollo web.</p>
-            <ul>
-                <li><i class="fa-brands fa-html5"></i>Html</li>
-                <li><i class="fa-brands fa-css3-alt"></i>Css</li>
-                <li><i class="fa-brands fa-js"></i>JavaScript</li>
+            <ul class="conocimientos">
+                <li><i class="devicon-html5-plain colored"></i>HTML</li>
+                <li><i class="devicon-css3-plain colored"></i>CSS</li>
+                <li><i class="devicon-javascript-plain colored"></i>JavaScript</li>
             </ul>
             <p>Mis conocimientos en bases de datos.</p>
-            <ul>
-                <li><i class="fa-solid fa-database"></i>PostgreSQL</li>
-                <li><i class="fa-solid fa-table"></i>MySQL</li>
-                <li><i class="fa-regular fa-file"></i>MongoDB</li>
+            <ul class="conocimientos">
+                <li><i class="devicon-postgresql-plain colored"></i>PostgreSQL</li>
+                <li><i class="devicon-mysql-original colored"></i>MySQL</li>
+                <li><i class="devicon-mongodb-plain colored"></i>MongoDB</li>
             </ul>
         </section>
 
