@@ -20,6 +20,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     padding: 20px;
     justify-content: space-around;
+    transition: all 1s ease-in-out;
 }
 
 .box {
@@ -34,6 +35,7 @@ body {
     filter: grayscale();
     transition: all 1s ease-in-out;
 }
+
 
 .FotoPerfil {
     border-radius: 50%;
@@ -79,4 +81,27 @@ body {
 .box li i {
     margin-right: 15px;
     min-width: 50px;
+}
+
+@media (max-width: 1054px) {
+
+    .box {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .inicio {
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 15px;
+        margin: 4%;
+    }
+
+    .FotoPerfil {
+        width: 55%;
+        transition: all 1s ease-in-out;
+    }
+
+    .FotoPerfil:hover {
+        transform: scale(125%);
+    }
+
 }

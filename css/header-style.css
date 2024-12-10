@@ -71,10 +71,6 @@ header h1 {
 /* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
 
-    .box {
-        width: 90%;
-    }
-
     header nav ul li {
         margin: 0 8px; /* Reduce el margen */
         padding: 6px; /* Reduce el padding */
