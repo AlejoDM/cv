@@ -1,27 +1,34 @@
+/* Estilo para la lista en la sección de servicios */
 #servicios ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: space-around;
+    display: grid; /* Utiliza un diseño basado en grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Divide en columnas adaptativas con un ancho mínimo de 300px */
+    justify-content: space-around; /* Distribuye las columnas uniformemente con espacio entre ellas */
 }
 
+/* Elementos de lista dentro de servicios */
 #servicios ul li {
-    font-size: 1.5rem; 
-    line-height: 2rem; 
+    font-size: 1.5rem; /* Tamaño de fuente para los elementos de la lista */
+    line-height: 2rem; /* Altura de línea para mejorar la legibilidad */
 }
+
+/* Iconos dentro de los elementos de la lista de servicios */
 #servicios ul li i {
-    font-size: 3rem; 
-    margin-right: 10px; 
+    font-size: 3rem; /* Tamaño grande para los iconos */
+    margin-right: 10px; /* Espaciado entre el icono y el texto */
 }
 
+/* Párrafos dentro de la sección de servicios */
 #servicios p {
-    font-size: 1.5rem;
-    text-decoration:underline;
+    font-size: 1.5rem; /* Tamaño de fuente consistente con los elementos de la lista */
+    text-decoration: underline; /* Subraya el texto para destacar */
 }
 
+/* Iconos dentro de la lista de la sección de contacto */
 #contacto li i {
-    font-size: 5rem;
+    font-size: 5rem; /* Tamaño muy grande para resaltar los iconos de contacto */
 }
 
+/* Párrafos dentro de la sección "acerca de" */
 #acerca p {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Tamaño de fuente uniforme para los párrafos */
 }
