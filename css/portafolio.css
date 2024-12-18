@@ -1,36 +1,36 @@
+/* Estilo para la lista que contiene los elementos de portfolio */
 .portfolio-grid {
     margin-top: 20px;
-    list-style-type: none;
-    gap: 16px;
+    list-style-type: none; /* Elimina los puntos de las listas */
+    gap: 16px; /* Añade un espacio de 16px entre los elementos */
     margin-bottom: 20px;
-    display: inline-block;
+    display: inline-block; /* Permite que los elementos se alineen en línea */
     margin: 0 15px;
-    max-width: 350px;
+    max-width: 350px; /* Define un ancho máximo de 350px */
     padding-bottom: 25px;
 }
 
 .portfolio-grid a {
-    text-decoration: none;
+    text-decoration: none; /* Elimina la subrayado en los enlaces dentro de los elementos de portfolio */
 }
-
+/* Centra el texto */
 #portafolio {
     text-align: center;
 }
-
+/* Centra el texto */
 #portafolio p {
     text-align: center;
 }
-
+/* Efecto al pasar el ratón sobre los elementos de portfolio */
 .portfolio-item:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);  /* Aumenta ligeramente el tamaño del elemento */
 }
-
+/* Estilo para cada elemento dentro de la lista de portfolio */
 .portfolio-item {
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Aplica un borde de color gris claro */
     border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
     padding: 16px;
     background:rgb(0, 0, 0, 0.4);
     margin-left: 5%;
@@ -39,26 +39,26 @@
     height: 375px;
     transition: 0.5s;
 }
-
+/* Estilo para las imágenes dentro de los elementos de portfolio */
 .portfolio-item img {
     width: 90%;
     height: 150px;
     border-bottom: 1px solid #ddd;
-    filter: blur(3px);
+    filter: blur(3px); /* Aplica un desenfoque inicial a la imagen */
     transition: filter 0.5s;
-    object-fit: cover;
+    object-fit: cover; /* Asegura que la imagen cubra el área del contenedor */
 }
-
+/* Efecto de desenfoque al pasar el ratón sobre el elemento */
 .portfolio-item:hover img {
     filter: blur(0);
 }
-
+/* Estilo para los títulos dentro de los elementos de portfolio */
 .portfolio-item h3 {
     margin: 8px 0;
     font-size: 1.5em;
     color: white;
 }
-
+/* Estilo para los párrafos dentro de los elementos de portfolio */
 .portfolio-item p {
     font-size: 0.9em;
     color: white;
