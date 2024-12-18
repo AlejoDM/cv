@@ -1,107 +1,116 @@
+/* Reseteo de estilos globales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    box-sizing: border-box; /* Incluye bordes y padding en el tamaño total del elemento */
 }
 
+/* Estilos del cuerpo (body) */
 body {
-    display:grid;
-    min-height: 100vh;
-    background-color: black;
-    background: url("../imagenes/fondo.png") no-repeat;
-    background-size:cover;  
-    background-position: center;
-    background-attachment: fixed;
-    font-family:'Times New Roman', Times, serif;  
+    display: grid; /* Usa un diseño basado en grid */
+    min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la altura del viewport */
+    background-color: black; /* Color de fondo negro */
+    background: url("../imagenes/fondo.png") no-repeat; /* Imagen de fondo sin repetición */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo al hacer scroll */
+    font-family: 'Times New Roman', Times, serif; /* Fuente clásica para el texto */
 }
 
+/* Contenedor principal */
 .inicio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    padding: 20px;
-    justify-content: space-around;
-    transition: all 1s ease-in-out;
+    display: grid; /* Define un contenedor con diseño grid */
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Columnas adaptativas con un tamaño mínimo de 500px */
+    padding: 20px; /* Espaciado interno */
+    justify-content: space-around; /* Espaciado uniforme entre elementos */
+    transition: all 1s ease-in-out; /* Transición suave para cambios en los estilos */
 }
 
+/* Caja individual */
 .box {
-    background: rgba(0,0,0,0.4);
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 4%;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    border-radius: 15px;
-    filter: grayscale();
-    transition: all 1s ease-in-out;
+    background: rgba(0,0,0,0.4); /* Fondo semitransparente */
+    width: 85%; /* Ancho del 85% */
+    margin: 0 auto; /* Centrado horizontal */
+    margin-top: 4%; /* Espaciado superior */
+    padding: 10px; /* Espaciado interno */
+    color: white; /* Texto en blanco */
+    text-align: center; /* Alineación del texto al centro */
+    border-radius: 15px; /* Bordes redondeados */
+    filter: grayscale(); /* Escala de grises inicial */
+    transition: all 1s ease-in-out; /* Transición suave para los cambios de estilo */
 }
 
-
+/* Imagen de perfil */
 .FotoPerfil {
-    border-radius: 50%;
+    border-radius: 50%; /* Hace la imagen circular */
 }
 
+/* Efectos al pasar el cursor sobre la caja */
 .box:hover {
-    filter: none;
-    transform: scale(105%);
+    filter: none; /* Elimina la escala de grises */
+    transform: scale(105%); /* Aumenta ligeramente el tamaño */
 }
 
+/* Título principal dentro de la caja */
 .box h1 {
-    font-size: 3rem;
-    letter-spacing: 4px;
-    font-weight: 100;
-    margin: 30px 0 20px;
-    font-weight: bold;
+    font-size: 3rem; /* Tamaño de fuente grande */
+    letter-spacing: 4px; /* Espaciado entre letras */
+    font-weight: bold; /* Fuente en negrita */
+    margin: 30px 0 20px; /* Márgenes superior e inferior */
 }
 
+/* Subtítulo dentro de la caja */
 .box h2 {
-    font-size: 2rem;
-    font-weight: 100;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+    font-size: 2rem; /* Tamaño de fuente mediano */
+    font-weight: 100; /* Fuente ligera */
+    letter-spacing: 3px; /* Espaciado entre letras */
+    margin-bottom: 20px; /* Margen inferior */
 }
 
-
-
+/* Iconos dentro de la caja */
 .box i {
-    color: white;
-    padding: 5px;
-    font-size: 40px;
+    color: white; /* Color blanco */
+    padding: 5px; /* Espaciado interno */
+    font-size: 40px; /* Tamaño de fuente grande */
 }
 
+/* Elementos de lista dentro de la caja */
 .box li {
-    text-align: left;
-    list-style-type: none;
-    padding-left: 20px;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    font-weight: 100%;
+    text-align: left; /* Alineación del texto a la izquierda */
+    list-style-type: none; /* Sin viñetas */
+    padding-left: 20px; /* Espaciado a la izquierda */
+    margin-bottom: 20px; /* Margen inferior */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: 100%; /* Fuente ligera */
 }
 
+/* Iconos en listas dentro de la caja */
 .box li i {
-    margin-right: 15px;
-    min-width: 50px;
+    margin-right: 15px; /* Espaciado a la derecha */
+    min-width: 50px; /* Ancho mínimo para alinear íconos */
 }
 
+/* Estilos responsivos para pantallas pequeñas */
 @media (max-width: 1054px) {
-
+    /* Fondo invisible */
     .box {
         background-color: rgba(0, 0, 0, 0);
     }
 
+    /* Se utiliza el contenedor principal en vez de la caja */
     .inicio {
         background-color: rgba(0,0,0,0.4);
         border-radius: 15px;
-        margin: 4%;
+        margin: 4%; /* Margen externo */
     }
 
+    /* Imagen de perfil más pequeña con efecto al pasar el cursor */
     .FotoPerfil {
-        width: 55%;
-        transition: all 1s ease-in-out;
+        width: 55%; /* Reduce el tamaño de la imagen */
+        transition: all 1s ease-in-out; /* Transición suave */
     }
 
     .FotoPerfil:hover {
-        transform: scale(125%);
+        transform: scale(125%); /* Agranda la imagen al pasar el cursor */
     }
-
 }
