@@ -3,195 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alejo De Miguel</title>
+
+    <!-- SEO Básico -->
+    <title>Alejo De Miguel — Portafolio Profesional | Desarrollador de Sistemas</title>
+    <meta name="description" content="Portafolio profesional de Alejo José De Miguel. Analista y Desarrollador Universitario de Sistemas de Información. Estudiante de Ingeniería en Sistemas en la UTN FRVM.">
+    <meta name="keywords" content="Alejo De Miguel, Alejo José De Miguel, Programador, Ingeniería en Sistemas de Información, UTN FRVM, Villa María, Córdoba, Desarrollador, Visual FoxPro, SQL Server, PostgreSQL, NestJS, Angular, Ionic">
+    <meta name="author" content="Alejo José De Miguel">
+    <meta name="robots" content="index, follow">
+
+    <!-- Ubicación para SEO Local -->
+    <meta name="geo.placename" content="Villa María, Córdoba, Argentina">
+
+    <!-- Open Graph (Redes Sociales) -->
+    <meta property="og:title" content="Alejo De Miguel — Portafolio Profesional">
+    <meta property="og:description" content="Analista y Desarrollador Universitario de Sistemas de Información. Estudiante de Ingeniería en Sistemas en la UTN FRVM.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alejodm.github.io/cv/">
+    <meta property="og:image" content="https://alejodm.github.io/cv/imagenes/yo.jpeg">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Alejo De Miguel — Portafolio Profesional">
+    <meta name="twitter:description" content="Analista y Desarrollador de Sistemas. Portafolio de proyectos y habilidades.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alejodm.github.io/cv/">
+
+    <!-- Tema del navegador móvil -->
+    <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./imagenes/currículum.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/74e47ada53.js" crossorigin="anonymous"></script>    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />    <link rel="stylesheet" href="css/header-style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/74e47ada53.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/pantalla-carga-style.css">
+    <link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/box.css">
     <link rel="stylesheet" href="./css/secciones-style.css">
-    <link rel="stylesheet" href="./css/portafolio.css">
-    <link rel="stylesheet" href="./css/pantalla-carga-style.css">
     <link rel="stylesheet" href="./css/habilidades.css">
-    <script src="./scripts.js"></script>
+    <link rel="stylesheet" href="./css/experiencia.css">
+    <link rel="stylesheet" href="./css/portafolio.css">
+
+    <!-- Script diferido para no bloquear el renderizado -->
+    <script src="./scripts.js" defer></script>
 </head>
 
-
 <body>
+    <!-- Fondo tecnológico animado -->
+    <canvas id="tech-bg" aria-hidden="true"></canvas>
 
     <!-- Pantalla de carga -->
-    <div id="loading-screen">
-        <div class="animacion-carga"></div>
-        <p>Cargando...</p>
+    <div id="loading-screen" aria-hidden="true">
+        <div class="loader-container">
+            <div class="loader-ring"></div>
+            <p>Cargando...</p>
+        </div>
     </div>
 
-    <header>
-        <!-- Navegación, con la función para mostrar las secciones respectivas. -->
-        <nav>
-            <ul>
-                <li><a href="#inicio" onclick="showSection('inicio')">Inicio</a></li>
-                <li><a href="#acerca" onclick="showSection('acerca')">Acerca de mí</a></li>
-                <li><a href="#servicios" onclick="showSection('servicios')">Habilidades</a></li>
-                <li><a href="#portafolio" onclick="showSection('portafolio')">Proyectos</a></li>
-                <li><a href="#contacto" onclick="showSection('contacto')">Contacto</a></li>
+    <!-- Header con navegación sticky -->
+    <header id="site-header">
+        <nav id="main-nav">
+            <a href="#inicio" class="nav-logo">ADM</a>
+            <button id="hamburger-btn" class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
+                <li><a href="#acerca" class="nav-link" data-section="acerca">Sobre mí</a></li>
+                <li><a href="#experiencia" class="nav-link" data-section="experiencia">Experiencia</a></li>
+                <li><a href="#servicios" class="nav-link" data-section="servicios">Habilidades</a></li>
+                <li><a href="#portafolio" class="nav-link" data-section="portafolio">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
             </ul>
         </nav>
-        <h1>Portafolio</h1>
     </header>
 
-
     <main>
-        <!-- Sección Inicio -->
-        <section id="inicio" class="inicio">
-            <div class="box">
-                <img src="imagenes/yo.jpeg" alt="" class="FotoPerfil" width="90%">
+        <!-- Sección Hero / Inicio -->
+        <section id="inicio" class="section hero-section">
+            <div class="hero-content">
+                <div class="hero-image-wrapper animate-on-scroll">
+                    <img src="imagenes/yo.jpeg" alt="Foto de perfil de Alejo De Miguel" class="hero-photo">
+                </div>
+                <div class="hero-text animate-on-scroll">
+                    <p class="hero-greeting">Hola, soy</p>
+                    <h1 class="hero-name">Alejo De Miguel</h1>
+                    <h2 class="hero-title">Analista y Desarrollador Universitario de Sistemas de Información</h2>
+                    <p class="hero-subtitle">Estudiante de Ingeniería en Sistemas de Información — UTN FRVM</p>
+                    <ul class="hero-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Villa María, Córdoba, Argentina</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>17/09/2002</span>
+                        </li>
+                    </ul>
+                    <div class="hero-cta">
+                        <a href="#portafolio" class="btn btn-primary">Ver proyectos</a>
+                        <a href="#contacto" class="btn btn-outline">Contacto</a>
+                    </div>
+                </div>
             </div>
-            <div class="box">
-                <h1>Alejo De Miguel</h1>
-                <h2>Analista y Desarrollador Universitario de Sistemas de Información</h2>
-                <h2>Estudiante de Ingeniería en Sistemas de Información</h2>
-                <li><i class="fa-solid fa-calendar-days" style="color:#edff9e"></i>17/09/2002</li>
-                <li><i class="fa-solid fa-location-dot" style="color:#a1ff84"></i>Villa María, Córdoba, Argentina.</li>
-                <li><i class="fa-solid fa-mobile-screen" style="color:#9afcff"></i>+54 9 3534 205 342</li>
+        </section>
+
+        <!-- Sección Acerca De -->
+        <section id="acerca" class="section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">
+                    <span class="section-title-accent">01.</span> Sobre mí
+                </h2>
+                <div class="about-content animate-on-scroll">
+                    <p>Actualmente, me encuentro cursando mi cuarto año de Ingeniería en Sistemas de Información, donde he desarrollado una sólida base en programación. Mi interés en la programación y mi pasión por la resolución de problemas complejos me han llevado a enfocar mi formación en estas áreas, buscando constantemente oportunidades para aplicar y expandir mis conocimientos.</p>
+                    <p>Estoy motivado por la posibilidad de contribuir en proyectos desafiantes y adquirir experiencia práctica que me permita crecer profesionalmente. Mi objetivo es aprovechar las oportunidades laborales para aplicar mis habilidades, mejorar mi experiencia y continuar aprendiendo.</p>
+                    <p>Poseo habilidades destacadas en adaptabilidad, aprendizaje continuo, organización, gestión del tiempo y razonamiento lógico, que considero fundamentales para enfrentar los retos en el campo de la tecnología y la programación.</p>
+                </div>
             </div>
         </section>
 
-
-        <!-- Sección Acerca De, breve descripción -->
-        <section id="acerca" class="hidden">
-            <h2>Acerca de mí</h2>
-            <p>Actualmente, me encuentro cursando mi cuarto año de Ingeniería en Sistemas de información, donde he desarrollado una sólida base en programación. Mi interés en la programación y mi pasión por la resolución de problemas complejos me han llevado a enfocar mi formación en estas áreas, buscando constantemente oportunidades para aplicar y expandir mis conocimientos.</p>
-            <p>Estoy motivado por la posibilidad de contribuir en proyectos desafiantes y adquirir experiencia práctica que me permita crecer profesionalmente. Mi objetivo es aprovechar las oportunidades laborales para aplicar mis habilidades, mejorar mi experiencia y continuar aprendiendo.</p>
-            <p>Poseo habilidades destacadas en adaptabilidad, aprendizaje continuo, organización, gestión del tiempo y razonamiento lógico, que considero fundamentales para enfrentar los retos en el campo de la tecnología y la programación. Estoy comprometido con el desarrollo constante y con la aplicación efectiva de mis competencias en un entorno profesional.            </p>
+        <!-- Sección Experiencia Laboral -->
+        <section id="experiencia" class="section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">
+                    <span class="section-title-accent">02.</span> Experiencia
+                </h2>
+                <div class="timeline animate-on-scroll">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">Desarrollador</h3>
+                                <span class="timeline-badge">Actual</span>
+                            </div>
+                            <p class="timeline-company">
+                                <i class="fa-solid fa-building"></i>
+                                Rubén Olivero Servicios Informáticos
+                            </p>
+                            <p class="timeline-period">
+                                <i class="fa-regular fa-calendar"></i>
+                                Septiembre 2025 — Actualidad
+                            </p>
+                            <p class="timeline-description">Desarrollo de software y bases de datos utilizando Visual FoxPro, SQL Server, PostgreSQL, PGAdmin y Crystal Reports. Manejo de vistas remotas y creación de scripts SQL garantizando retrocompatibilidad con SQL Server 2008 para clientes específicos.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Visual FoxPro</span>
+                                <span class="tag">SQL Server</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Crystal Reports</span>
+                                <span class="tag">PGAdmin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Sección Habilidades -->
+        <section id="servicios" class="section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">
+                    <span class="section-title-accent">03.</span> Habilidades
+                </h2>
+                <div class="skills-grid">
+                    <!-- Lenguajes de Programación -->
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-code"></i>
+                            <h3>Lenguajes</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="devicon-python-plain colored"></i><span>Python</span></li>
+                            <li><i class="devicon-java-plain colored"></i><span>Java</span></li>
+                            <li><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></li>
+                            <li><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
+                            <li><i class="devicon-php-plain colored"></i><span>PHP</span></li>
+                        </ul>
+                    </div>
 
-        <!-- Sección Servicios/Habilidades, lenguajes y habilidades dominadas -->
-        <section id="servicios" class="hidden">
-            <h2>Habilidades</h2>
-            <p>Mis conocimientos en diferentes lenguajes de programación.</p>
-            <ul>
-                <li><i class="devicon-python-plain colored"></i>Python</li>
-                <li><i class="devicon-java-plain colored"></i>Java</li>
-                <li><i class="devicon-typescript-plain colored"></i>TypeScript</li>
-                <li><i class="devicon-javascript-plain colored"></i>JavaScript</li>
-            </ul>
-            <p>Mis conocimientos en diferentes frameworks.</p>
-            <ul>
-                <li><i class="devicon-nestjs-original colored"></i>NestJS</li>
-                <li><i class="devicon-angularjs-plain colored"></i>Angular</li>
-                <li><i class="devicon-django-plain colored"></i>Django</li>
-            </ul>
-            <p>Mis conocimientos en desarrollo web.</p>
-            <ul>
-                <li><i class="devicon-html5-plain colored"></i>HTML</li>
-                <li><i class="devicon-css3-plain colored"></i>CSS</li>
-                <li><i class="devicon-php-plain colored"></i>PHP</li>
-            </ul>
-            <p>Mis conocimientos en bases de datos.</p>
-            <ul>
-                <li><i class="devicon-postgresql-plain colored"></i>PostgreSQL</li>
-                <li><i class="devicon-mysql-original colored"></i>MySQL</li>
-                <li><i class="devicon-mongodb-plain colored"></i>MongoDB</li>
-            </ul>
-            <p>Habilidades de Análisis.</p>
-            <ul>
-                <li><i class="devicon-unifiedmodelinglanguage-plain"></i>Modelado UML</li>
-                <li><i class="fa-solid fa-diagram-project"></i>Modelado BPMN</li>
-                <li><i class="fa-solid fa-pen-to-square"></i>Análisis de Requerimientos</li>
-                <li><i class="fa-solid fa-list-check"></i>Análisis de Negocio</li>
-                <li><i class="fa-solid fa-file-lines"></i>Documentación</li>
+                    <!-- Desarrollo Web & Mobile -->
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-globe"></i>
+                            <h3>Web &amp; Mobile</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="devicon-angularjs-plain colored"></i><span>Angular</span></li>
+                            <li><i class="devicon-nestjs-original colored"></i><span>NestJS</span></li>
+                            <li><i class="devicon-react-original colored"></i><span>React</span></li>
+                            <li><i class="devicon-ionic-original colored"></i><span>Ionic</span></li>
+                            <li><i class="devicon-androidstudio-plain colored"></i><span>Android Studio</span></li>
+                            <li><i class="devicon-html5-plain colored"></i><span>HTML5</span></li>
+                            <li><i class="devicon-css3-plain colored"></i><span>CSS3</span></li>
+                            <li><i class="devicon-django-plain colored"></i><span>Django</span></li>
+                        </ul>
+                    </div>
 
-            </ul>
-            <p>Habilidades Blandas.</p>
-            <ul>
-                <li><i class="fa-solid fa-chalkboard-user"></i>Aprendizaje Continuo</li>
-                <li><i class="fa-regular fa-clock"></i>Gestión de Tiempo</li>
-                <li><i class="fa-solid fa-shuffle"></i>Adaptabilidad</li>
-                <li><i class="fa-solid fa-people-group"></i>Trabajo en Equipo</li>
-                <li><i class="fa-regular fa-comments"></i>Comunicación</li>
-                <li><i class="fa-solid fa-triangle-exclamation"></i>Resolución de Problemas</li>
-            </ul>
+                    <!-- Bases de Datos -->
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-database"></i>
+                            <h3>Bases de Datos</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></li>
+                            <li><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></li>
+                            <li><i class="devicon-mysql-original colored"></i><span>MySQL</span></li>
+                            <li><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></li>
+                            <li><i class="devicon-firebase-plain colored"></i><span>Firebase</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Ciberseguridad -->
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <h3>Ciberseguridad</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-satellite-dish"></i><span>Wireshark</span></li>
+                            <li><i class="fa-solid fa-bug"></i><span>BurpSuite</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Análisis -->
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <h3>Análisis</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="devicon-unifiedmodelinglanguage-plain"></i><span>Modelado UML</span></li>
+                            <li><i class="fa-solid fa-diagram-project"></i><span>Modelado BPMN</span></li>
+                            <li><i class="fa-solid fa-pen-to-square"></i><span>Requerimientos</span></li>
+                            <li><i class="fa-solid fa-list-check"></i><span>Análisis de Negocio</span></li>
+                            <li><i class="fa-solid fa-file-lines"></i><span>Documentación</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Habilidades Blandas -->
+                    <div class="skill-card animate-on-scroll">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-users"></i>
+                            <h3>Habilidades Blandas</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-chalkboard-user"></i><span>Aprendizaje Continuo</span></li>
+                            <li><i class="fa-regular fa-clock"></i><span>Gestión de Tiempo</span></li>
+                            <li><i class="fa-solid fa-shuffle"></i><span>Adaptabilidad</span></li>
+                            <li><i class="fa-solid fa-people-group"></i><span>Trabajo en Equipo</span></li>
+                            <li><i class="fa-regular fa-comments"></i><span>Comunicación</span></li>
+                            <li><i class="fa-solid fa-triangle-exclamation"></i><span>Resolución de Problemas</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Sección Proyectos -->
+        <section id="portafolio" class="section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">
+                    <span class="section-title-accent">04.</span> Proyectos
+                </h2>
+                <p class="section-subtitle animate-on-scroll">Algunos de mis desarrollos más recientes.</p>
+
+                <div class="projects-grid">
+                    <a href="https://alejodm.github.io/curriculum-generator/" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="imagenes/curriculum-generator.jpg" alt="Captura de Curriculum Generator">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Curriculum Generator</h3>
+                            <p>Una aplicación web que permite generar tu currículum en PDF de forma rápida, gratuita y desde el navegador.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="imagenes/animetrackerpro.png" alt="Captura de AnimeTrackerPro">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AnimeTrackerPro</h3>
+                            <p>Aplicación móvil para seguimiento de anime, consumiendo la Jikan API e integrando Firebase para autenticación y sincronización de datos.</p>
+                            <div class="project-tags">
+                                <span class="tag">Ionic</span>
+                                <span class="tag">Angular</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">Jikan API</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=YuOWe67py0U" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://img.youtube.com/vi/YuOWe67py0U/hqdefault.jpg" alt="Captura de Sistema para Restaurantes">
+                            <div class="project-overlay">
+                                <i class="fa-brands fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Sistema para Restaurantes</h3>
+                            <p>Sistema para la gestión de menús, pedidos, cobros y reportes para restaurantes, realizado durante el cursado del Seminario Integrador.</p>
+                            <div class="project-tags">
+                                <span class="tag">NestJS</span>
+                                <span class="tag">Angular</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=Efl7tyIrImg" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://img.youtube.com/vi/Efl7tyIrImg/hqdefault.jpg" alt="Captura de Juego Separar Sílabas">
+                            <div class="project-overlay">
+                                <i class="fa-brands fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Juego Separar Sílabas</h3>
+                            <p>Juego interactivo diseñado para ayudar a mejorar tus habilidades en la separación de palabras en sílabas.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=FGvmXNlzL4c" target="_blank" rel="noopener noreferrer" class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://img.youtube.com/vi/FGvmXNlzL4c/hqdefault.jpg" alt="Captura de Usuarios y Productos">
+                            <div class="project-overlay">
+                                <i class="fa-brands fa-youtube"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Usuarios y Productos</h3>
+                            <p>Validación de Usuarios y Administración de Productos y Tipos de Productos. Proyecto de Desarrollo de Software.</p>
+                            <div class="project-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Sección Contacto -->
-        <section id="contacto" class="hidden">
-            <h2>Contacto</h2>
-            <li><a href="https://wa.me/5493534205342" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
-            <li><a href="https://www.instagram.com/alejo.demiguel/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="mailto:alejodm12345@gmail.com"><i class="fa-brands fa-google"></i></a></li>
-            <li><a href="https://github.com/AlejoDM" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="https://www.youtube.com/@alejodemiguel" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a></li>
+        <section id="contacto" class="section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">
+                    <span class="section-title-accent">05.</span> Contacto
+                </h2>
+                <p class="section-subtitle animate-on-scroll">¿Querés trabajar conmigo? ¡Escribime!</p>
+                <div class="contact-links animate-on-scroll">
+                    <a href="https://www.linkedin.com/in/alejo-demiguel/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://wa.me/5493534205342" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:alejodm12345@gmail.com" class="contact-item" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/AlejoDM" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/alejo.demiguel/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.youtube.com/@alejodemiguel" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
         </section>
-
-        <!-- Sección Portafolio/Proyectos -->
-        <section id="portafolio" class="hidden">
-            <h2>Proyectos</h2>
-
-            <p>Algunos de mis proyectos.</p>
-
-            <!--    Agregar más proyectos.
-            <div class="portfolio-grid">
-                <a href="https://linkalproyecto.com" target="_blank" rel="noopener noreferrer">
-                <div class="portfolio-item">
-                        <img src="imagenes/imagenproyecto.jpg" alt="Proyecto 1">
-                        <h3>Nombre del proyecto</h3>
-                        <p>Breve descripción del proyecto.</p>
-                </div>
-                </a>
-            </div>
-                -->
-
-            <div class="portfolio-grid">
-                <a href="https://www.youtube.com/watch?v=YuOWe67py0U" target="_blank" rel="noopener noreferrer">
-                <div class="portfolio-item">
-                        <img src="https://img.youtube.com/vi/YuOWe67py0U/hqdefault.jpg" alt="Proyecto 3">
-                        <h3>Sistema para Restaurantes</h3>
-                        <p>Sistema para la gestión de menús, pedidos, cobros y reportes para restaurantes, realizado durante el cursado del Seminario Integrador.</p>
-                </div>
-                </a>
-            </div>
-
-            <div class="portfolio-grid">
-                <a href="https://www.youtube.com/watch?v=Efl7tyIrImg" target="_blank" rel="noopener noreferrer">
-                <div class="portfolio-item">
-                        <img src="https://img.youtube.com/vi/Efl7tyIrImg/hqdefault.jpg" alt="Proyecto 2">
-                        <h3>Juego Separar Sílabas</h3>
-                        <p>Juego interactivo diseñado para ayudar a mejorar tus habilidades en la separación de palabras en sílabas.</p>
-                </div>
-                </a>
-            </div>
-
-            <div class="portfolio-grid">
-                <a href="https://alejodm.github.io/curriculum-generator/" target="_blank" rel="noopener noreferrer">
-                <div class="portfolio-item">
-                        <img src="imagenes/curriculum-generator.jpg" alt="Proyecto 4">
-                        <h3>Curriculum Generator</h3>
-                        <p>Una aplicación web que permite generar tu currículum en PDF de forma rápida, gratuita y desde el navegador.</p>
-                </div>
-                </a>
-            </div>
-
-            <div class="portfolio-grid">
-                <a href="https://www.youtube.com/watch?v=FGvmXNlzL4c" target="_blank" rel="noopener noreferrer">
-                <div class="portfolio-item">
-                        <img src="https://img.youtube.com/vi/FGvmXNlzL4c/hqdefault.jpg" alt="Proyecto 1">
-                        <h3>Usuarios y Productos</h3>
-                        <p>Proyecto realizado para la materia de Desarrollo de Software. Validación de Usuarios y Administración de Productos y Tipos de Productos.</p>
-                </div>
-                </a>
-            </div>
-
-        </section>
-
     </main>
 
-
-
     <footer>
-        <p>&copy; 2024 Alejo José De Miguel. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Alejo José De Miguel. Todos los derechos reservados.</p>
     </footer>
-
-
 
 </body>
 </html>

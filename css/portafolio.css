@@ -1,65 +1,167 @@
-/* Estilo para la lista que contiene los elementos de portfolio */
-.portfolio-grid {
-    margin-top: 20px;
-    list-style-type: none; /* Elimina los puntos de las listas */
-    gap: 16px; /* Añade un espacio de 16px entre los elementos */
-    margin-bottom: 20px;
-    display: inline-block; /* Permite que los elementos se alineen en línea */
-    margin: 0 15px;
-    max-width: 350px; /* Define un ancho máximo de 350px */
-    padding-bottom: 25px;
+/* ============================================================
+   PORTAFOLIO / PROYECTOS
+   Grid responsivo de tarjetas de proyecto con imagen,
+   overlay de hover y tags de tecnologías.
+   ============================================================ */
+
+/* --- Grid de proyectos --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
 }
 
-.portfolio-grid a {
-    text-decoration: none; /* Elimina la subrayado en los enlaces dentro de los elementos de portfolio */
+/* --- Tarjeta de proyecto (es un <a>) --- */
+.project-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
 }
-/* Centra el texto */
-#portafolio {
-    text-align: center;
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-glow-accent);
 }
-/* Centra el texto */
-#portafolio p {
-    text-align: center;
+
+/* --- Imagen del proyecto con overlay --- */
+.project-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
 }
-/* Efecto al pasar el ratón sobre los elementos de portfolio */
-.portfolio-item:hover {
-    transform: scale(1.05);  /* Aumenta ligeramente el tamaño del elemento */
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
 }
-/* Estilo para cada elemento dentro de la lista de portfolio */
-.portfolio-item {
-    text-align: center;
-    border: 1px solid #ddd; /* Aplica un borde de color gris claro */
-    border-radius: 8px;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
-    padding: 16px;
-    background:rgb(0, 0, 0, 0.4);
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 280px;
-    height: 375px;
-    transition: 0.5s;
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
 }
-/* Estilo para las imágenes dentro de los elementos de portfolio */
-.portfolio-item img {
-    width: 90%;
-    height: 150px;
-    border-bottom: 1px solid #ddd;
-    filter: blur(3px); /* Aplica un desenfoque inicial a la imagen */
-    transition: filter 0.5s;
-    object-fit: cover; /* Asegura que la imagen cubra el área del contenedor */
+
+/* Overlay con icono al hacer hover */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(108, 99, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-base);
 }
-/* Efecto de desenfoque al pasar el ratón sobre el elemento */
-.portfolio-item:hover img {
-    filter: blur(0);
-}
-/* Estilo para los títulos dentro de los elementos de portfolio */
-.portfolio-item h3 {
-    margin: 8px 0;
-    font-size: 1.5em;
+
+.project-overlay i {
+    font-size: var(--text-3xl);
     color: white;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
-/* Estilo para los párrafos dentro de los elementos de portfolio */
-.portfolio-item p {
-    font-size: 0.9em;
-    color: white;
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* --- Información del proyecto --- */
+.project-info {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.project-info p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    flex: 1;
+}
+
+/* Tags de tecnologías dentro de proyectos */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+/* ============================================================
+   SECCIÓN DE CONTACTO
+   Iconos de redes sociales con labels y hover effects.
+   ============================================================ */
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text-muted);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    min-width: 120px;
+    transition: all var(--transition-base);
+}
+
+.contact-item:hover {
+    color: var(--color-accent);
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+}
+
+.contact-item i {
+    font-size: var(--text-3xl);
+    transition: transform var(--transition-base);
+}
+
+.contact-item:hover i {
+    transform: scale(1.15);
+}
+
+.contact-item span {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        gap: var(--space-md);
+    }
+
+    .contact-item {
+        min-width: 100px;
+        padding: var(--space-md);
+    }
 }

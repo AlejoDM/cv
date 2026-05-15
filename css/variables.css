@@ -1,0 +1,89 @@
+/* ============================================================
+   SISTEMA DE DISEÑO — Variables Globales
+   Paleta de colores, tipografías, espaciados y efectos
+   reutilizables en todos los archivos CSS del portafolio.
+   ============================================================ */
+
+:root {
+    /* --- Colores de fondo --- */
+    --color-bg:           #0a0a0f;
+    --color-surface:      #12121a;
+    --color-surface-alt:  #1a1a2e;
+    --color-surface-glass: rgba(18, 18, 26, 0.6);
+
+    /* --- Colores de acento --- */
+    --color-accent:       #6c63ff;
+    --color-accent-hover: #7f78ff;
+    --color-secondary:    #00d4aa;
+    --color-secondary-hover: #00e8bb;
+    --color-highlight:    #f59e0b;
+
+    /* --- Colores de texto --- */
+    --color-text:         #e4e4e7;
+    --color-text-muted:   #a1a1aa;
+    --color-text-dim:     #71717a;
+
+    /* --- Bordes --- */
+    --color-border:       rgba(108, 99, 255, 0.15);
+    --color-border-hover: rgba(108, 99, 255, 0.35);
+
+    /* --- Tipografía --- */
+    --font-primary:   'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-display:   'Outfit', 'Inter', sans-serif;
+    --font-mono:      'Fira Code', 'Consolas', monospace;
+
+    /* --- Tamaños de fuente --- */
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-lg:   1.125rem;
+    --text-xl:   1.25rem;
+    --text-2xl:  1.5rem;
+    --text-3xl:  1.875rem;
+    --text-4xl:  2.25rem;
+    --text-5xl:  3rem;
+
+    /* --- Espaciado --- */
+    --space-xs:  0.25rem;
+    --space-sm:  0.5rem;
+    --space-md:  1rem;
+    --space-lg:  1.5rem;
+    --space-xl:  2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+
+    /* --- Border Radius --- */
+    --radius-sm:   0.375rem;
+    --radius-md:   0.5rem;
+    --radius-lg:   0.75rem;
+    --radius-xl:   1rem;
+    --radius-full: 9999px;
+
+    /* --- Sombras --- */
+    --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md:   0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg:   0 10px 25px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(108, 99, 255, 0.15);
+    --shadow-glow-accent: 0 0 30px rgba(108, 99, 255, 0.25);
+
+    /* --- Transiciones --- */
+    --transition-fast:   150ms ease;
+    --transition-base:   300ms ease;
+    --transition-slow:   500ms ease-in-out;
+    --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* --- Glassmorphism --- */
+    --glass-bg:      rgba(18, 18, 26, 0.7);
+    --glass-border:  rgba(255, 255, 255, 0.08);
+    --glass-blur:    12px;
+
+    /* --- Breakpoints (para referencia, no se usan como variables en media queries) --- */
+    /* Mobile: 480px | Tablet: 768px | Desktop: 1024px | Wide: 1440px */
+
+    /* --- Ancho máximo del contenido --- */
+    --max-width: 1200px;
+
+    /* --- Altura del header --- */
+    --header-height: 70px;
+}

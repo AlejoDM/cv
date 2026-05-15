@@ -1,93 +1,114 @@
-body {
-    scroll-behavior: smooth;
+/* ============================================================
+   SECCIONES GENERALES
+   Estilos comunes para todas las secciones del portafolio:
+   contenedor, títulos, subtítulos y animaciones de entrada.
+   ============================================================ */
+
+/* --- Sección base --- */
+.section {
+    padding: var(--space-4xl) var(--space-xl);
+    position: relative;
 }
 
-/* Ocultar secciones no activas */
-.hidden {
-    display: none;
+/* Contenedor centrado con ancho máximo */
+.section-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
-/* Mostrar secciones activas */
-.active {
-    display: block;
-    animation: fadeIn 1s ease-in-out; /* Animación de aparición suave */
+/* --- Título de sección con número de acento --- */
+.section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Desplazamiento inicial hacia abajo */
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-border), transparent);
+    max-width: 300px;
+}
+
+.section-title-accent {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--color-accent);
+    font-weight: 400;
+}
+
+/* --- Subtítulo de sección --- */
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2xl);
+}
+
+/* --- Contenido "Sobre mí" --- */
+.about-content {
+    max-width: 800px;
+}
+
+.about-content p {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   ANIMACIONES DE ENTRADA (Scroll)
+   Los elementos con la clase .animate-on-scroll empiezan
+   ocultos y aparecen con fade-in + slide-up al ser visibles.
+   ============================================================ */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay escalonado para elementos consecutivos en grids */
+.skills-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.skills-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.skills-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.skills-grid .animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+.skills-grid .animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+.skills-grid .animate-on-scroll:nth-child(7) { transition-delay: 0.6s; }
+.skills-grid .animate-on-scroll:nth-child(8) { transition-delay: 0.7s; }
+
+.projects-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.projects-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.projects-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.projects-grid .animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-3xl) var(--space-md);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* Posición final */
+
+    .section-title {
+        font-size: var(--text-2xl);
     }
-}
-/* Secciones activas */
-.active {
-    margin-top: 50px;
-    background:rgb(0, 0, 0, 0.4);
-    border-radius: 15px;
-    margin: 40px;
-    padding-bottom: 10px;
-}
-/* Títulos de las secciones */
-.active h2 {
-    text-align: center;
-    color: rgb(228, 228, 2);
-    padding-top: 15px;
-    font-style: italic;
-}
-/* Párrafos de las secciones */
-.active p {
-    color: white;
-    text-align: left;
-    padding: 20px 20px;
-    font-size: 18px;
-    font-style: oblique;
-}
-/* Listas de las secciones */
-.active li {
-    text-align: left;
-    list-style-type: none; /* Elimina los puntos */
-    padding-left: 20px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 100%;
-    color: white;
-}
-/* Íconos de las listas dentro de las secciones */
-.active li i {
-    margin-right: 15px;
-    min-width: 70px;
-    color: white;
-    padding: 5px;
-    font-size: 40px;
-    padding-left: 15px;
-    padding-bottom: 15px;
-}
-/* Estilos para la seccion Contacto */
-#contacto {
-    padding-bottom: 20px;
-    text-align: center;
-}
-/* Estilo para cada dato de contacto */
-#contacto li {
-    display: inline-block; 
-    margin: 0 15px;
-}
-/* Estilo para los íconos en la sección de contacto */
-#contacto i {
-    color: white;
-    size: 25px;
-    transition: all 0.5s ease-in-out; 
-}
-/* Transformación al pasar el mouse */
-#contacto i:hover {
-    color: rgb(207, 207, 0); 
-    transform: scale(1.2); 
-}
-/* Estilo para el título de contacto */
-#contacto h2 {
-    padding-bottom: 15px;
+
+    .section-title::after {
+        max-width: 100px;
+    }
 }

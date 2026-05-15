@@ -1,116 +1,215 @@
-/* Reseteo de estilos globales */
-* {
-    margin: 0; /* Elimina márgenes predeterminados */
-    padding: 0; /* Elimina rellenos predeterminados */
-    box-sizing: border-box; /* Incluye bordes y padding en el tamaño total del elemento */
+/* ============================================================
+   HERO SECTION (INICIO)
+   Layout principal con foto de perfil, nombre, títulos,
+   detalles personales y botones de acción.
+   ============================================================ */
+
+/* --- Contenedor Hero --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: calc(var(--header-height) + var(--space-2xl));
+    padding-bottom: var(--space-4xl);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Estilos del cuerpo (body) */
-body {
-    display: grid; /* Usa un diseño basado en grid */
-    min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la altura del viewport */
-    background-color: black; /* Color de fondo negro */
-    background: url("../imagenes/fondo.png") no-repeat; /* Imagen de fondo sin repetición */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-    background-position: center; /* Centra la imagen de fondo */
-    background-attachment: fixed; /* Fija la imagen de fondo al hacer scroll */
-    font-family: 'Times New Roman', Times, serif; /* Fuente clásica para el texto */
+
+
+.hero-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4xl);
+    position: relative;
+    z-index: 1;
 }
 
-/* Contenedor principal */
-.inicio {
-    display: grid; /* Define un contenedor con diseño grid */
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Columnas adaptativas con un tamaño mínimo de 500px */
-    padding: 20px; /* Espaciado interno */
-    justify-content: space-around; /* Espaciado uniforme entre elementos */
-    transition: all 1s ease-in-out; /* Transición suave para cambios en los estilos */
+/* --- Imagen de perfil — Estilo recorte con degradado --- */
+.hero-image-wrapper {
+    flex-shrink: 0;
+    position: relative;
+    width: 320px;
+    height: 400px;
+    overflow: hidden;
 }
 
-/* Caja individual */
-.box {
-    background: rgba(0,0,0,0.4); /* Fondo semitransparente */
-    width: 85%; /* Ancho del 85% */
-    margin: 0 auto; /* Centrado horizontal */
-    margin-top: 4%; /* Espaciado superior */
-    padding: 10px; /* Espaciado interno */
-    color: white; /* Texto en blanco */
-    text-align: center; /* Alineación del texto al centro */
-    border-radius: 15px; /* Bordes redondeados */
-    filter: grayscale(); /* Escala de grises inicial */
-    transition: all 1s ease-in-out; /* Transición suave para los cambios de estilo */
+/* Degradado inferior que difumina la foto con el fondo */
+.hero-image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, var(--color-bg) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
-/* Imagen de perfil */
-.FotoPerfil {
-    border-radius: 50%; /* Hace la imagen circular */
+/* Foto sin marco, se integra con el ambiente */
+.hero-photo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    z-index: 1;
 }
 
-/* Efectos al pasar el cursor sobre la caja */
-.box:hover {
-    filter: none; /* Elimina la escala de grises */
-    transform: scale(105%); /* Aumenta ligeramente el tamaño */
+
+/* --- Textos del Hero --- */
+.hero-text {
+    flex: 1;
 }
 
-/* Título principal dentro de la caja */
-.box h1 {
-    font-size: 3rem; /* Tamaño de fuente grande */
-    letter-spacing: 4px; /* Espaciado entre letras */
-    font-weight: bold; /* Fuente en negrita */
-    margin: 30px 0 20px; /* Márgenes superior e inferior */
+.hero-greeting {
+    font-size: var(--text-lg);
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 1px;
 }
 
-/* Subtítulo dentro de la caja */
-.box h2 {
-    font-size: 2rem; /* Tamaño de fuente mediano */
-    font-weight: 100; /* Fuente ligera */
-    letter-spacing: 3px; /* Espaciado entre letras */
-    margin-bottom: 20px; /* Margen inferior */
+.hero-name {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-/* Iconos dentro de la caja */
-.box i {
-    color: white; /* Color blanco */
-    padding: 5px; /* Espaciado interno */
-    font-size: 40px; /* Tamaño de fuente grande */
+.hero-title {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
 }
 
-/* Elementos de lista dentro de la caja */
-.box li {
-    text-align: left; /* Alineación del texto a la izquierda */
-    list-style-type: none; /* Sin viñetas */
-    padding-left: 20px; /* Espaciado a la izquierda */
-    margin-bottom: 20px; /* Margen inferior */
-    font-size: 1.5rem; /* Tamaño de fuente */
-    font-weight: 100%; /* Fuente ligera */
+.hero-subtitle {
+    font-size: var(--text-base);
+    color: var(--color-text-dim);
+    margin-bottom: var(--space-xl);
 }
 
-/* Iconos en listas dentro de la caja */
-.box li i {
-    margin-right: 15px; /* Espaciado a la derecha */
-    min-width: 50px; /* Ancho mínimo para alinear íconos */
+/* --- Detalles del Hero (ubicación, fecha) --- */
+.hero-details {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 1054px) {
-    /* Fondo invisible */
-    .box {
-        background-color: rgba(0, 0, 0, 0);
+.hero-details li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+}
+
+.hero-details li i {
+    color: var(--color-secondary);
+    font-size: var(--text-base);
+}
+
+/* --- Botones CTA --- */
+.hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    border: none;
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-hover);
+    box-shadow: 0 6px 25px rgba(108, 99, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1.5px solid var(--color-accent);
+}
+
+.btn-outline:hover {
+    background: rgba(108, 99, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE — Hero
+   ============================================================ */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-2xl);
     }
 
-    /* Se utiliza el contenedor principal en vez de la caja */
-    .inicio {
-        background-color: rgba(0,0,0,0.4);
-        border-radius: 15px;
-        margin: 4%; /* Margen externo */
+    .hero-image-wrapper {
+        width: 220px;
+        height: 270px;
     }
 
-    /* Imagen de perfil más pequeña con efecto al pasar el cursor */
-    .FotoPerfil {
-        width: 55%; /* Reduce el tamaño de la imagen */
-        transition: all 1s ease-in-out; /* Transición suave */
+    .hero-name {
+        font-size: var(--text-4xl);
     }
 
-    .FotoPerfil:hover {
-        transform: scale(125%); /* Agranda la imagen al pasar el cursor */
+    .hero-details {
+        justify-content: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
     }
 }
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: var(--text-3xl);
+    }
+
+    .hero-title {
+        font-size: var(--text-lg);
+    }
+
+    .hero-image-wrapper {
+        width: 180px;
+        height: 220px;
+    }
+}
+

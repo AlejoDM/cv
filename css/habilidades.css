@@ -1,34 +1,104 @@
-/* Estilo para la lista en la sección de servicios */
-#servicios ul {
-    display: grid; /* Utiliza un diseño basado en grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Divide en columnas adaptativas con un ancho mínimo de 300px */
-    justify-content: space-around; /* Distribuye las columnas uniformemente con espacio entre ellas */
+/* ============================================================
+   HABILIDADES
+   Grid de tarjetas por categoría con iconos, hover effects
+   y diseño responsivo adaptativo.
+   ============================================================ */
+
+/* --- Grid principal de habilidades --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
 }
 
-/* Elementos de lista dentro de servicios */
-#servicios ul li {
-    font-size: 1.5rem; /* Tamaño de fuente para los elementos de la lista */
-    line-height: 2rem; /* Altura de línea para mejorar la legibilidad */
+/* --- Tarjeta individual de habilidad --- */
+.skill-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
-/* Iconos dentro de los elementos de la lista de servicios */
-#servicios ul li i {
-    font-size: 3rem; /* Tamaño grande para los iconos */
-    margin-right: 10px; /* Espaciado entre el icono y el texto */
+.skill-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-glow);
 }
 
-/* Párrafos dentro de la sección de servicios */
-#servicios p {
-    font-size: 1.5rem; /* Tamaño de fuente consistente con los elementos de la lista */
-    text-decoration: underline; /* Subraya el texto para destacar */
+/* --- Cabecera de la tarjeta (icono + título) --- */
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
 }
 
-/* Iconos dentro de la lista de la sección de contacto */
-#contacto li i {
-    font-size: 5rem; /* Tamaño muy grande para resaltar los iconos de contacto */
+.skill-card-header i {
+    font-size: var(--text-2xl);
+    color: var(--color-accent);
 }
 
-/* Párrafos dentro de la sección "acerca de" */
-#acerca p {
-    font-size: 1.5rem; /* Tamaño de fuente uniforme para los párrafos */
+.skill-card-header h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* --- Lista de skills dentro de la tarjeta --- */
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.skill-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+}
+
+.skill-list li:hover {
+    background-color: rgba(108, 99, 255, 0.05);
+    color: var(--color-text);
+}
+
+.skill-list li i {
+    font-size: var(--text-xl);
+    min-width: 28px;
+    text-align: center;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+}
+
+/* Los iconos de devicon ya tienen color propio con .colored */
+.skill-list li i.colored {
+    filter: none;
+}
+
+.skill-list li:hover i {
+    color: var(--color-secondary);
+}
+
+.skill-list li:hover i.colored {
+    filter: brightness(1.2);
+    color: unset;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
