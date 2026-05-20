@@ -36,7 +36,25 @@
     <link rel="canonical" href="https://alejodm.github.io/cv/">
 
     <!-- Tema del navegador móvil -->
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#0a0a0f" id="theme-meta">
+
+    <!-- Script para aplicar el tema de inmediato antes de pintar la pantalla -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            let theme = 'dark';
+            if (savedTheme) {
+                theme = savedTheme;
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                theme = 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            const meta = document.getElementById('theme-meta');
+            if (meta) {
+                meta.setAttribute('content', theme === 'dark' ? '#0a0a0f' : '#f5f7fb');
+            }
+        })();
+    </script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./imagenes/currículum.png" type="image/x-icon">
@@ -82,19 +100,25 @@
     <header id="site-header">
         <nav id="main-nav">
             <a href="#inicio" class="nav-logo">ADM</a>
-            <button id="hamburger-btn" class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <ul id="nav-menu" class="nav-menu">
-                <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
-                <li><a href="#acerca" class="nav-link" data-section="acerca">Sobre mí</a></li>
-                <li><a href="#experiencia" class="nav-link" data-section="experiencia">Experiencia</a></li>
-                <li><a href="#servicios" class="nav-link" data-section="servicios">Habilidades</a></li>
-                <li><a href="#portafolio" class="nav-link" data-section="portafolio">Proyectos</a></li>
-                <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a></li>
+                    <li><a href="#acerca" class="nav-link" data-section="acerca">Sobre mí</a></li>
+                    <li><a href="#experiencia" class="nav-link" data-section="experiencia">Experiencia</a></li>
+                    <li><a href="#servicios" class="nav-link" data-section="servicios">Habilidades</a></li>
+                    <li><a href="#portafolio" class="nav-link" data-section="portafolio">Proyectos</a></li>
+                    <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema claro/oscuro">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="hamburger-btn" class="hamburger" aria-label="Abrir menú de navegación"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </nav>
     </header>
 

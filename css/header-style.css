@@ -23,6 +23,26 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Transiciones de tema para elementos principales */
+#site-header,
+.nav-menu,
+.nav-link,
+.skill-card,
+.project-card,
+.contact-item,
+.timeline-content,
+.timeline-marker,
+.tag,
+.btn,
+footer {
+    transition: background-color var(--transition-base), 
+                border-color var(--transition-base), 
+                color var(--transition-base), 
+                box-shadow var(--transition-base),
+                background var(--transition-base);
 }
 
 /* --- Fondo tecnológico (canvas) --- */
@@ -56,14 +76,14 @@ footer {
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border-bottom: 1px solid var(--glass-border);
-    transition: padding var(--transition-base), box-shadow var(--transition-base);
+    transition: padding var(--transition-base), box-shadow var(--transition-base), background var(--transition-base), border-color var(--transition-base);
 }
 
 /* Header compacto al hacer scroll */
 #site-header.scrolled {
     padding: 0;
     box-shadow: var(--shadow-lg);
-    background: rgba(10, 10, 15, 0.92);
+    background: var(--scrolled-header-bg);
 }
 
 /* --- Navegación --- */
@@ -74,6 +94,41 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: var(--space-md) var(--space-xl);
+}
+
+/* Contenedor derecho para agrupar menú y acciones */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* --- Botón Cambiar Tema --- */
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-base);
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-border-hover);
+    background-color: rgba(108, 99, 255, 0.08);
+    transform: scale(1.05);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
 }
 
 /* Logo / Monograma */
@@ -195,12 +250,12 @@ footer {
         flex-direction: column;
         justify-content: center;
         gap: var(--space-md);
-        background: rgba(10, 10, 15, 0.97);
+        background: var(--mobile-menu-bg);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-left: 1px solid var(--glass-border);
         padding: var(--space-2xl);
-        transition: right var(--transition-slow);
+        transition: right var(--transition-slow), background var(--transition-base), border-color var(--transition-base);
     }
 
     .nav-menu.open {

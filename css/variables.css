@@ -10,6 +10,8 @@
     --color-surface:      #12121a;
     --color-surface-alt:  #1a1a2e;
     --color-surface-glass: rgba(18, 18, 26, 0.6);
+    --scrolled-header-bg: rgba(10, 10, 15, 0.92);
+    --mobile-menu-bg:     rgba(10, 10, 15, 0.97);
 
     /* --- Colores de acento --- */
     --color-accent:       #6c63ff;
@@ -26,6 +28,11 @@
     /* --- Bordes --- */
     --color-border:       rgba(108, 99, 255, 0.15);
     --color-border-hover: rgba(108, 99, 255, 0.35);
+
+    /* --- Canvas --- */
+    --color-accent-rgb:   108, 99, 255;
+    --color-secondary-rgb: 0, 212, 170;
+    --grid-line-opacity:  0.12;
 
     /* --- Tipografía --- */
     --font-primary:   'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -86,4 +93,50 @@
 
     /* --- Altura del header --- */
     --header-height: 70px;
+}
+
+/* ============================================================
+   TEMA CLARO
+   Definición de variables modificadas para el tema claro.
+   ============================================================ */
+[data-theme="light"] {
+    /* --- Colores de fondo --- */
+    --color-bg:           #eef2f7;
+    --color-surface:      #ffffff;
+    --color-surface-alt:  #e0e5f0;
+    --color-surface-glass: rgba(238, 242, 247, 0.7);
+    --scrolled-header-bg: rgba(238, 242, 247, 0.92);
+    --mobile-menu-bg:     rgba(238, 242, 247, 0.97);
+
+    /* --- Colores de acento --- */
+    --color-accent:       #5046e5;
+    --color-accent-hover: #3f35c6;
+    --color-secondary:    #0ea5e9;
+    --color-secondary-hover: #0284c7;
+    --color-highlight:    #d97706;
+
+    /* --- Colores de texto --- */
+    --color-text:         #0f172a;
+    --color-text-muted:   #334155;
+    --color-text-dim:     #64748b;
+
+    /* --- Bordes --- */
+    --color-border:       rgba(80, 70, 229, 0.14);
+    --color-border-hover: rgba(80, 70, 229, 0.3);
+
+    /* --- Sombras --- */
+    --shadow-sm:          0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(80, 70, 229, 0.03);
+    --shadow-md:          0 8px 20px -4px rgba(80, 70, 229, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+    --shadow-lg:          0 20px 30px -10px rgba(15, 23, 42, 0.08), 0 10px 15px -5px rgba(80, 70, 229, 0.08);
+    --shadow-glow:        0 0 20px rgba(80, 70, 229, 0.12);
+    --shadow-glow-accent: 0 0 30px rgba(80, 70, 229, 0.22);
+
+    /* --- Glassmorphism --- */
+    --glass-bg:      rgba(255, 255, 255, 0.75);
+    --glass-border:  rgba(80, 70, 229, 0.08);
+
+    /* --- Canvas --- */
+    --color-accent-rgb:   80, 70, 229;
+    --color-secondary-rgb: 14, 165, 233;
+    --grid-line-opacity:  0.08;
 }

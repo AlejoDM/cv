@@ -7,6 +7,48 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ----------------------------------------------------------
+       0. SELECCIÓN DE TEMA (CLARO / OSCURO)
+       Manejo de la alternancia de tema, iconos y persistencia.
+    ---------------------------------------------------------- */
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeMeta = document.getElementById("theme-meta");
+
+    function updateThemeUI(theme) {
+        if (!themeToggleBtn) return;
+        const icon = themeToggleBtn.querySelector("i");
+        if (icon) {
+            if (theme === "light") {
+                icon.className = "fa-solid fa-sun";
+            } else {
+                icon.className = "fa-solid fa-moon";
+            }
+        }
+    }
+
+    // Inicializar el estado del botón según el tema actual (ya aplicado en head)
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    updateThemeUI(currentTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", function () {
+            const theme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+            
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            
+            updateThemeUI(theme);
+            
+            if (themeMeta) {
+                themeMeta.setAttribute("content", theme === "dark" ? "#0a0a0f" : "#f5f7fb");
+            }
+
+            // Notificar al Canvas que el tema cambió
+            const event = new CustomEvent("themeChanged", { detail: { theme: theme } });
+            document.dispatchEvent(event);
+        });
+    }
+
+    /* ----------------------------------------------------------
        1. PANTALLA DE CARGA
        Oculta la pantalla de carga una vez que todo el contenido
        (incluyendo imágenes) haya terminado de cargar.
@@ -161,9 +203,35 @@ document.addEventListener("DOMContentLoaded", function () {
     var particles = [];
     var maxParticles = 28;
 
-    // Colores del tema (violeta y turquesa muy transparentes)
+    // Colores del tema (se inicializan leyendo de las variables CSS)
     var accentColor = "108, 99, 255";
     var secondaryColor = "0, 212, 170";
+    var gridLineOpacity = 0.12;
+
+    function updateColors() {
+        var style = getComputedStyle(document.documentElement);
+        var accent = style.getPropertyValue('--color-accent-rgb');
+        var secondary = style.getPropertyValue('--color-secondary-rgb');
+        var opacity = style.getPropertyValue('--grid-line-opacity');
+        
+        if (accent) accentColor = accent.trim();
+        if (secondary) secondaryColor = secondary.trim();
+        if (opacity) gridLineOpacity = parseFloat(opacity.trim());
+    }
+
+    // Escuchar el evento de cambio de tema
+    document.addEventListener("themeChanged", function () {
+        updateColors();
+        
+        // Actualizar partículas existentes con los nuevos colores de tema
+        particles.forEach(function (p) {
+            var useAccent = Math.random() > 0.5;
+            p.color = useAccent ? accentColor : secondaryColor;
+        });
+    });
+
+    // Inicializar colores al cargar
+    updateColors();
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -215,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // Dibujar líneas de la grilla
-        ctx.strokeStyle = "rgba(" + accentColor + ", 0.12)";
+        ctx.strokeStyle = "rgba(" + accentColor + ", " + gridLineOpacity + ")";
         ctx.lineWidth = 0.5;
 
         // Líneas verticales
@@ -238,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < nodes.length; i++) {
             var node = nodes[i];
             node.pulse += node.speed;
-            var glow = 0.08 + Math.sin(node.pulse) * 0.07;
+            var glow = (gridLineOpacity * 0.66) + Math.sin(node.pulse) * (gridLineOpacity * 0.58);
 
             ctx.beginPath();
             ctx.arc(node.x, node.y, 1.5, 0, Math.PI * 2);
